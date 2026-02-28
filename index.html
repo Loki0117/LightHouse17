@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LightHouse17 | Career Guidance Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">
+            LightHouse<span>17</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#quiz">Career Quiz</a></li>
+            <li><a href="#pathways">Career Paths</a></li>
+            <li><a href="#upskill">Upskill</a></li>
+            <li><a href="#jobs">Jobs</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="btn-outline" id="signinBtn">Sign In</button>
+            <button class="btn-primary" id="signupBtn">Sign Up</button>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+            <h1>Build a Career You’re Confident About</h1>
+            <p>
+                Whether you're a student exploring options or a graduate planning your next step,
+                LightHouse17 helps you understand where you fit and how to move forward.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#quiz" class="btn-primary">Take Career Quiz</a>
+                <a href="#services" class="btn-outline">Explore Services</a>
+            </div>
+        </div>
+
+        <div class="hero-box">
+            <div class="info-card">🎯 Clear Career Direction</div>
+            <div class="info-card">💼 Real Industry Insights</div>
+            <div class="info-card">📚 Skill Roadmaps</div>
+            <div class="info-card">🚀 Growth Planning</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>How We Support You</h2>
+            <p>
+                Practical services designed to help you prepare, improve and progress confidently.
+            </p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ================= QUIZ ================= -->
+
+<section id="quiz" class="section light-bg">
+    <div class="container">
+        <div class="section-header">
+            <h2>Career Interest Quiz</h2>
+            <p>
+                Answer a few thoughtful questions and discover career directions that match your strengths.
+            </p>
+        </div>
+
+        <div class="quiz-container">
+            <div class="progress-bar">
+                <div id="quizProgress"></div>
+            </div>
+
+            <div id="quizQuestions"></div>
+
+            <div class="quiz-controls">
+                <button id="prevBtn" class="btn-outline">Previous</button>
+                <button id="nextBtn" class="btn-primary">Next</button>
+                <button id="submitQuiz" class="btn-primary" style="display:none;">
+                    See Results
+                </button>
+            </div>
+        </div>
+
+        <div id="quizResults" class="quiz-results">
+            <h3>Your Suggested Career Paths</h3>
+            <div id="resultsContainer" class="grid"></div>
+            <button id="restartQuiz" class="btn-outline">Retake Quiz</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PATHWAYS ================= -->
+
+<section id="pathways" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore Career Paths</h2>
+            <p>
+                Browse high-demand careers, growth outlook and salary expectations.
+            </p>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="tech">Tech</button>
+            <button class="filter-btn" data-filter="creative">Creative</button>
+            <button class="filter-btn" data-filter="business">Business</button>
+        </div>
+
+        <div id="pathwayGrid" class="grid"></div>
+    </div>
+</section>
+
+<!-- ================= UPSKILL ================= -->
+
+<section id="upskill" class="section light-bg">
+    <div class="container">
+        <div class="section-header">
+            <h2>Recommended Courses</h2>
+            <p>
+                Structured learning options to help you build relevant skills.
+            </p>
+        </div>
+
+        <div id="skillsGrid" class="grid"></div>
+    </div>
+</section>
+
+<!-- ================= JOBS ================= -->
+
+<section id="jobs" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Jobs & Internships</h2>
+            <p>
+                Curated entry-level roles and internships for students and fresh graduates.
+            </p>
+        </div>
+
+        <div class="job-filters">
+            <select id="jobType">
+                <option value="all">All Roles</option>
+                <option value="internship">Internships</option>
+                <option value="entry">Entry Level</option>
+                <option value="fresher">Fresher</option>
+            </select>
+
+            <input type="text" id="jobSearch" placeholder="Search by title or company">
+        </div>
+
+        <div id="jobsGrid" class="grid"></div>
+    </div>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+
+<section id="resources" class="section light-bg">
+    <div class="container">
+        <div class="section-header">
+            <h2>Career Resources</h2>
+            <p>
+                Tools and guides to help you prepare smarter.
+            </p>
+        </div>
+
+        <div id="resourcesGrid" class="grid"></div>
+    </div>
+</section>
+
+<!-- ================= MODALS ================= -->
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Book a Session</h3>
+
+        <form id="bookingForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="date" required>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Confirm Booking
+            </button>
+        </form>
+    </div>
+</div>
+
+<div id="resumeModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Upload Resume for Review</h3>
+
+        <form id="resumeForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Upload Resume</label>
+                <input type="file" required>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Submit Resume
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+    <div class="container">
+        <p><strong>LightHouse17</strong></p>
+        <p>
+            Helping students and graduates make confident career decisions.
+        </p>
+        <p style="margin-top:10px;">
+            © 2026 LightHouse17. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
